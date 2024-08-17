@@ -4,12 +4,12 @@ const Button = ({ text, onClick, outlined }) => {
       <button
         className={
           outlined
-            ? "border border-fuchsia py-2 px-3 rounded-2xl"
-            : "bg-fuchsia py-2 px-3 border border-none rounded-2xl hover:shadow-lg"
+            ? "border border-fuchsia py-2 px-3 rounded-full"
+            : "bg-fuchsia py-2 px-3 border border-none rounded-full hover:shadow-lg"
         }
         onClick={() => onClick()}
       >
-        {text}
+        <div className="text-white">{text}</div>
       </button>
     </div>
   );
