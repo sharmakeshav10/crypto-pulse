@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "./Button";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   console.log("in header");
@@ -7,18 +8,18 @@ const Header = () => {
     <div className="flex justify-between items-center py-4 sticky top-0">
       <h1 className="text-white text-2xl font-bold">CryptoPulse</h1>
       <div className="flex items-center text-white gap-4">
-        <a>
+        <Link to="/">
           <p>Home</p>
-        </a>
-        <a>
+        </Link>
+        <Link to="/compare">
           <p>Compare</p>
-        </a>
-        <a>
+        </Link>
+        <Link to="/watchlist">
           <p>Watchlist</p>
-        </a>
-        <a>
+        </Link>
+        <Link to="/dashboard">
           <Button text={"Dashboard"} />
-        </a>
+        </Link>
       </div>
     </div>
   );
