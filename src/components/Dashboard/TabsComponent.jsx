@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 
+import Dashboard from "../../pages/Dashboard";
+
+import { Link } from "react-router-dom";
+
 const TabsComponent = () => {
   const [activeTab, setActiveTab] = useState(0);
   const tabs = ["Grid", "List"];

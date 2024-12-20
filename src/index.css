@@ -6,4 +6,9 @@
   body {
     @apply bg-black;
   }
+
+  ::selection {
+    @apply bg-fuchsia;
+    @apply text-white;
+  }
 }

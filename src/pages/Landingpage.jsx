@@ -4,7 +4,7 @@ import PhoneComponent from "../components/LandingPage/PhoneComponent";
 
 const Landingpage = () => {
   return (
-    <div className="flex flex-col sm:flex-row justify-between ">
+    <div className="flex flex-col sm:flex-row gap-10 items-center justify-between ">
       <PrimaryComponent />
       <PhoneComponent />
     </div>
