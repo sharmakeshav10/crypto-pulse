@@ -1,20 +1,20 @@
 import React, { useState } from "react";
 
-import Dashboard from "../../pages/Dashboard";
+import GridView from "./GridView";
+import { IoIosTrendingDown, IoIosTrendingUp } from "react-icons/io";
+import ListView from "./ListView";
 
-import { Link } from "react-router-dom";
-
-const TabsComponent = () => {
+const TabsComponent = ({ coins }) => {
   const [activeTab, setActiveTab] = useState(0);
   const tabs = ["Grid", "List"];
-  const contents = ["one", "two"];
+  // const contents = ["one", "two"];
   return (
     <>
-      <div className="hidden text-lg font-bold text-center shadow sm:flex">
+      <div className="text-lg font-bold text-center shadow flex">
         {tabs.map((tab, index) => (
           <div key={index} className="w-full focus-within:z-10">
             <button
-              href="#"
+              // href="#"
               onClick={() => setActiveTab(index)}
               className={`inline-block w-full p-4 ${
                 activeTab === index
@@ -30,12 +30,23 @@ const TabsComponent = () => {
       </div>
 
       {/* tab content */}
-      <div>
-        {contents.map((content, index) => {
-          if (activeTab === index) {
-            return <div className="text-white">{content}</div>;
-          }
-        })}
+      <div className="mt-12">
+        {/* Check if activeTab is 0 and coins data is available */}
+        {activeTab === 0 ? (
+          coins.length > 0 ? (
+            <GridView coins={coins} />
+          ) : (
+            <div className="text-white">No coins available</div>
+          )
+        ) : activeTab === 1 ? (
+          coins.length > 0 ? (
+            <ListView coins={coins} />
+          ) : (
+            <div className="text-white">No coins available</div>
+          )
+        ) : (
+          <div className="text-white">Invalid Tab Selected</div>
+        )}
       </div>
     </>
   );
