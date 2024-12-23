@@ -4,6 +4,7 @@ import Landingpage from "./pages/Landingpage";
 import Dashboard from "./pages/Dashboard";
 import AppLayout from "./layout/AppLayout";
 import Compare from "./pages/Compare";
+import CoinPage from "./pages/CoinPage";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
       {
         path: "/compare",
         element: <Compare />,
+      },
+      {
+        path: "/coin/:id",
+        element: <CoinPage />,
       },
     ],
   },

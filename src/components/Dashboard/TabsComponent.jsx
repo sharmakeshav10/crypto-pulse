@@ -29,21 +29,27 @@ const TabsComponent = ({ coins }) => {
         ))}
       </div>
 
-      {/* tab content */}
+      {/* Tab content */}
       <div className="mt-12">
         {/* Check if activeTab is 0 and coins data is available */}
         {activeTab === 0 ? (
           coins.length > 0 ? (
-            <GridView coins={coins} />
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              {coins.map((coin) => (
+                <GridView key={coin.id} coin={coin} />
+              ))}
+            </div>
           ) : (
             <div className="text-white">No coins available</div>
           )
         ) : activeTab === 1 ? (
-          coins.length > 0 ? (
-            <ListView coins={coins} />
-          ) : (
-            <div className="text-white">No coins available</div>
-          )
+          <div className="flex flex-col gap-6">
+            {coins.length > 0 ? (
+              coins.map((coin) => <ListView key={coin.id} coin={coin} />)
+            ) : (
+              <div className="text-white">No coins available</div>
+            )}
+          </div>
         ) : (
           <div className="text-white">Invalid Tab Selected</div>
         )}

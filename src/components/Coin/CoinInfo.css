@@ -1,0 +1,10 @@
+/* Custom styles */
+.coin-description a {
+  color: white; /* Tailwind color */
+  text-decoration: underline;
+}
+
+.coin-description a:hover {
+  color: #ff1493; /* Hover color */
+  text-decoration: none;
+}
