@@ -1,11 +1,15 @@
 import React from "react";
 import { IoIosTrendingDown, IoIosTrendingUp } from "react-icons/io";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
-const GridView = ({ coin }) => {
+const GridView = ({ coin, delay }) => {
   return (
     <Link key={coin.id} to={`/coin/${coin?.id}`}>
-      <div
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: delay }}
         className={`bg-slate-950 p-4 rounded-lg ${
           coin?.price_change_percentage_24h >= 0
             ? "hover:border hover:border-green-500"
@@ -108,7 +112,7 @@ const GridView = ({ coin }) => {
             }).format(coin?.market_cap)}
           </span>
         </p>
-      </div>
+      </motion.div>
     </Link>
   );
 };

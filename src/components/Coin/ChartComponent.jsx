@@ -32,7 +32,7 @@ const ChartComponent = ({ chartData, priceType, multiAxis }) => {
           },
         },
       },
-      cryptoTwo: {
+      cryptoTwo: multiAxis && {
         type: "linear",
         display: true,
         position: "right",

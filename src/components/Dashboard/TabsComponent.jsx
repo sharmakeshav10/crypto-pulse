@@ -35,8 +35,8 @@ const TabsComponent = ({ coins }) => {
         {activeTab === 0 ? (
           coins.length > 0 ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-              {coins.map((coin) => (
-                <GridView key={coin.id} coin={coin} />
+              {coins.map((coin, i) => (
+                <GridView key={coin.id} coin={coin} delay={(i % 4) * 0.2} />
               ))}
             </div>
           ) : (
@@ -45,7 +45,9 @@ const TabsComponent = ({ coins }) => {
         ) : activeTab === 1 ? (
           <div className="flex flex-col gap-6">
             {coins.length > 0 ? (
-              coins.map((coin) => <ListView key={coin.id} coin={coin} />)
+              coins.map((coin, i) => (
+                <ListView key={coin.id} coin={coin} delay={(i % 8) * 0.2} />
+              ))
             ) : (
               <div className="text-white">No coins available</div>
             )}

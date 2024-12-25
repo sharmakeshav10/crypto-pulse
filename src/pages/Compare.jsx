@@ -120,8 +120,10 @@ const Compare = () => {
             />
             <SelectDays days={days} handleDaysChange={handleDaysChange} />
           </div>
-          <ListView coin={cryptoOneData} />
-          <ListView coin={cryptoTwoData} />
+          <div className="flex flex-col gap-4 mt-4">
+            <ListView coin={cryptoOneData} />
+            <ListView coin={cryptoTwoData} />
+          </div>
           <div className="bg-slate-950 p-4 rounded-lg w-full mt-6">
             <TogglePriceType
               handlePriceTypeChange={handlePriceTypeChange}

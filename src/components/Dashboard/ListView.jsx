@@ -2,11 +2,15 @@ import React from "react";
 import { IoIosTrendingDown, IoIosTrendingUp } from "react-icons/io";
 import { convertNumber } from "../../functions/convertNumber";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
-const ListView = ({ coin }) => {
+const ListView = ({ coin, delay }) => {
   return (
     <Link key={coin.id} to={`/coin/${coin?.id}`}>
-      <div
+      <motion.div
+        initial={{ opacity: 0, x: -50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5, delay: delay }}
         className={`bg-slate-950 p-4 rounded-lg flex justify-between items-center w-full ${
           coin?.price_change_percentage_24h >= 0
             ? "hover:border hover:border-green-500"
@@ -112,7 +116,7 @@ const ListView = ({ coin }) => {
             {convertNumber(coin?.market_cap)}
           </span>
         </p>
-      </div>
+      </motion.div>
     </Link>
   );
 };

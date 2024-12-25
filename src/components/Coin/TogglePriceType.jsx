@@ -40,7 +40,7 @@ const TogglePriceType = ({ priceType, handlePriceTypeChange }) => {
         }`}
         onClick={() => handleButtonClick("total_volumes")}
       >
-        Total Volume
+        Volume
       </button>
     </div>
   );

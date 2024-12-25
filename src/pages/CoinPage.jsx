@@ -31,6 +31,7 @@ const CoinPage = () => {
   }, [id]);
 
   const getData = async () => {
+    setIsLoading(true);
     const data = await getCoinData(id);
     if (data) {
       coinObject(setCoinData, data);
@@ -78,7 +79,11 @@ const CoinPage = () => {
               handlePriceTypeChange={handlePriceTypeChange}
               priceType={priceType}
             />
-            <ChartComponent priceType={priceType} chartData={chartData} />
+            <ChartComponent
+              priceType={priceType}
+              chartData={chartData}
+              multiAxis={false}
+            />
           </div>
           <CoinInfo
             name={coinData.name}
