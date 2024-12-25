@@ -23,7 +23,7 @@ const PrimaryComponent = () => {
         <RWebShare
           data={{
             text: "Explore CryptoPulse, your go-to platform for real-time crypto tracking and insights! 🚀",
-            url: "https://crypto-dashboard-jan.netlify.app",
+            url: "https://crypto-ify.netlify.app",
             title: "CryptoPulse - Real-Time Crypto Tracker",
           }}
           onClick={() => toast.info("Thanks for sharing CryptoPulse!")}
