@@ -3,6 +3,7 @@ import Button from "../common/Button";
 import { motion } from "framer-motion";
 import { RWebShare } from "react-web-share";
 import { toast } from "react-toastify";
+import { Link } from "react-router-dom";
 
 const PrimaryComponent = () => {
   return (
@@ -19,7 +20,9 @@ const PrimaryComponent = () => {
         Make Smarter Decisions
       </motion.h1>
       <div className="flex gap-5 mt-3 text-center md:text-left justify-center md:justify-start">
-        <Button text={"Dashboard"} />
+        <Link to="/dashboard">
+          <Button text={"Dashboard"} />
+        </Link>
         <RWebShare
           data={{
             text: "Explore CryptoPulse, your go-to platform for real-time crypto tracking and insights! 🚀",
