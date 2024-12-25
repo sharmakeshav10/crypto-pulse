@@ -30,11 +30,11 @@ const Header = () => {
             Compare
           </p>
         </Link>
-        <Link to="/watchlist">
+        {/* <Link to="/watchlist">
           <p className="text-slate-500 font-medium text-lg hover:text-white">
             Watchlist
           </p>
-        </Link>
+        </Link> */}
         <Link to="/dashboard">
           <Button text={"Dashboard"} />
         </Link>

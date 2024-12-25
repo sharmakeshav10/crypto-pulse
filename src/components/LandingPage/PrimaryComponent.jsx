@@ -7,18 +7,18 @@ import { toast } from "react-toastify";
 const PrimaryComponent = () => {
   return (
     <div className="flex flex-col gap-3 ">
-      <h1 className="text-white md:text-8xl font-bold text-6xl ">
-        Track Crypto
+      <h1 className="text-white sm:text-5xl md:text-8xl text-center md:text-left font-bold text-2xl ">
+        Track Crypto,
       </h1>
       <motion.h1
         initial={{ opacity: 0, scaleY: 0 }}
         animate={{ opacity: 1, scaleY: 1 }}
         transition={{ duration: 1 }}
-        className="text-fuchsia md:text-8xl font-bold text-6xl"
+        className="text-fuchsia sm:text-5xl md:text-8xl text-center md:text-left font-bold text-2xl"
       >
-        Real Time
+        Make Smarter Decisions
       </motion.h1>
-      <div className="flex gap-5 mt-3">
+      <div className="flex gap-5 mt-3 text-center md:text-left justify-center md:justify-start">
         <Button text={"Dashboard"} />
         <RWebShare
           data={{
