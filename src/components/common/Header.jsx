@@ -13,7 +13,7 @@ const Header = () => {
   };
 
   return (
-    <div className="flex justify-between items-center py-4 sticky top-0 z-50">
+    <div className="flex justify-between items-center py-4 sticky top-0 z-50 bg-black">
       <Link to="/">
         <h1 className="text-white text-3xl font-bold">CryptoPulse</h1>
       </Link>
