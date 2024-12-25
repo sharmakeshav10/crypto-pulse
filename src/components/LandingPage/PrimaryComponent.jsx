@@ -1,6 +1,8 @@
 import React from "react";
 import Button from "../common/Button";
 import { motion } from "framer-motion";
+import { RWebShare } from "react-web-share";
+import { toast } from "react-toastify";
 
 const PrimaryComponent = () => {
   return (
@@ -18,7 +20,16 @@ const PrimaryComponent = () => {
       </motion.h1>
       <div className="flex gap-5 mt-3">
         <Button text={"Dashboard"} />
-        <Button text={"Share App"} outlined={true} />
+        <RWebShare
+          data={{
+            text: "Explore CryptoPulse, your go-to platform for real-time crypto tracking and insights! 🚀",
+            url: "https://crypto-dashboard-jan.netlify.app",
+            title: "CryptoPulse - Real-Time Crypto Tracker",
+          }}
+          onClick={() => toast.info("Thanks for sharing CryptoPulse!")}
+        >
+          <Button text={"Share App"} outlined={true} />
+        </RWebShare>
       </div>
     </div>
   );

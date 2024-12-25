@@ -14,18 +14,24 @@ const Header = () => {
 
   return (
     <div className="flex justify-between items-center py-4 sticky top-0 z-50">
-      <h1 className="text-white text-2xl font-bold">CryptoPulse</h1>
+      <Link to="/">
+        <h1 className="text-white text-3xl font-bold">CryptoPulse</h1>
+      </Link>
 
       {/* Desktop navigation */}
-      <div className="md:flex items-center text-white gap-4 hidden">
+      <div className="md:flex items-center text-white gap-8 hidden">
         <Link to="/">
-          <p className="text-slate-500 font-medium hover:text-white">Home</p>
+          <p className="text-slate-500 font-medium text-lg hover:text-white">
+            Home
+          </p>
         </Link>
         <Link to="/compare">
-          <p className="text-slate-500 font-medium hover:text-white">Compare</p>
+          <p className="text-slate-500 font-medium text-lg hover:text-white">
+            Compare
+          </p>
         </Link>
         <Link to="/watchlist">
-          <p className="text-slate-500 font-medium hover:text-white">
+          <p className="text-slate-500 font-medium text-lg hover:text-white">
             Watchlist
           </p>
         </Link>
