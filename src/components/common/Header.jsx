@@ -35,7 +35,7 @@ const Header = () => {
       </div>
 
       {/* Mobile UI */}
-      <div className="text-center flex sm:hidden">
+      <div className="text-center flex md:hidden">
         <button
           className="text-white font-medium rounded-lg text-sm px-5 py-2.5"
           type="button"

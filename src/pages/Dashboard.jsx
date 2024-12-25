@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import TabsComponent from "../components/Dashboard/TabsComponent";
-import { options } from "../config/appConfig";
 import Search from "../components/Dashboard/Search";
 import Loader from "../components/common/Loader";
+import { get100Coins } from "../functions/get100Coins";
 
 const Dashboard = () => {
   const [coins, setCoins] = useState([]);
@@ -23,17 +23,14 @@ const Dashboard = () => {
 
   //api call for fetching all the coins
   const fetchCoins = async () => {
-    try {
-      const response = await fetch(
-        "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd",
-        options
-      );
+    const myCoins = await get100Coins();
+    console.log(myCoins);
 
-      const data = await response.json();
-      console.log(data);
-      setCoins(data);
+    if (myCoins) {
+      setCoins(myCoins);
+      // setPaginatedCoins()
       setIsLoading(false);
-    } catch (e) {}
+    }
   };
 
   useEffect(() => {
